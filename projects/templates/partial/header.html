@@ -11,6 +11,15 @@
           <a class="nav-link active" aria-current="page" href="{% url 'project_list' %}">{% trans "Home" %}</a>
         </li>
       </ul>
+      <form class="d-flex ms-auto" method="get" action="{% url 'project_list' %}">
+        {% csrf_token %}
+        <div class="input-group">
+          <input class="form-control" type="text" name="q" placeholder="{% trans 'Search' %}" value="{{ request.GET.q }}">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </nav>

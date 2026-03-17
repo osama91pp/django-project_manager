@@ -2,58 +2,124 @@
 {% load i18n %}
 {% load humanize %}
 {% block content %}
-    <div class="d-flex">
-        <h3 class="me-auto">{% trans "My Pojects" %}</h3>
-        <div>
-            <a href="{% url 'project_create' %}" class="btn btn-outline-success">
-                <i class="bi bi-plus-lg"></i>{% trans "New Project" %}
-            </a>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>{% trans "My Projects" %}</h1>
+        <a href="{% url 'project_create' %}">
+            <button class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> {% trans "New Project" %}
+            </button>
+        </a>
     </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for project in object_list %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge bg-success">
+                                {{ project.get_status_display }}
+                            </span>
+                            <small class="text-muted">
+                                {{ project.created_at|naturaltime }}
+                            </small>
+                        </div>
 
-    {% for project in object_list %}
-        <div class="card" style="width: 22rem;">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                    <span class="badge bg-success">
-                        {{ project.get_status_display }}
-                    </span>
-                    <small class="text-muted">
-                        {{ project.created_at|naturaltime }}
-                    </small>
-                </div>
+                        <h5 class="card-title fw-bold">{{ project.title }}</h5>
 
-                <h5 class="card-title fw-bold">{{ project.title }}</h5>
+                        <p class="card-text text-secondary">
+                            {{ project.description }}
+                        </p>
 
-                <p class="card-text text-secondary">
-                    {{ project.description }}
-                </p>
+                        <hr>
 
-                <hr>
-
-                <div class="d-flex gap-2">
-                    <a href="{% url 'project_update' project.id %}">
-                        <button class="btn btn-outline-primary btn-sm flex-fill">
-                            <i class="bi bi-pencil"></i> {% trans "Edit" %}
-                        </button>
-                    </a>
-                    <a href="{% url 'project_delete' project.id %}">
-                        <button class="btn btn-outline-danger btn-sm flex-fill">
-                            <i class="bi bi-trash"></i> {% trans "Delete" %}
-                        </button>
-                    </a>
+                        <div class="d-flex gap-2">
+                            <a href="{% url 'project_update' project.id %}">
+                                <button class="btn btn-outline-primary btn-sm flex-fill">
+                                    <i class="bi bi-pencil"></i> {% trans "Edit" %}
+                                </button>
+                            </a>
+                            <a href="{% url 'project_delete' project.id %}">
+                                <button class="btn btn-outline-danger btn-sm flex-fill">
+                                    <i class="bi bi-trash"></i> {% trans "Delete" %}
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% empty %}
-        <div class="alert alert-warning" role="alert">
-            <h4 class="alert-heading">{% trans "No projects found" %} &#128546;</h4>
-            <p>You don't have any projects yet. Click the button below to create a new one.</p>
-            <a href="{% url 'project_create' %}" class="btn btn-primary">Create New Project</a>
-        </div>
-    {% endfor %}
-
-
-
-
+        {% empty %}
+            <div class="alert alert-warning text-center" role="alert">
+                <h4 class="alert-heading">{% trans "There is no project to show" %}<p> &#128546; </p></h4>
+                <a href="{% url 'project_create' %}" class="btn btn-primary">Create New Project</a>
+            </div>
+        {% endfor %}
+        {% if page_obj.pajinator.count > 0 %}
+            <div class="de-flex justify-content-center bd-highlight mb-3">
+                <nav>
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                                    {% trans "Previous" %}
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">
+                                    {% trans "Previous" %}
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                    {% trans "Next" %}
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">
+                                    {% trans "Next" %}
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        {% endif %}
+    </div>
+{% if page_obj.has_previous or page_obj.has_next %}
+    <div class="d-flex justify-content-center bd-highlight mb-3">
+        <nav>
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                            {% trans "Previous" %}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">
+                            {% trans "Previous" %}
+                        </a>
+                    </li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                            {% trans "Next" %}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">
+                            {% trans "Next" %}
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+{% endif %}
 {% endblock content %}
