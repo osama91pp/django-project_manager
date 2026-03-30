@@ -6,13 +6,13 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">{% trans "LogIn" %}</h3>
+                        <h3 class="card-title">{% trans "Register" %}</h3>
                     </div>
                     <div class="card-body">
                         <form method="post">
                             {% csrf_token %}
                             {% include "common/form.html" with form=form %}
-                            <button type="submit" class="btn btn-primary">{% trans "LogIn" %}</button>
+                            <button type="submit" class="btn btn-primary">{% trans "Register" %}</button>
                         </form>
                     </div>
                 </div>
