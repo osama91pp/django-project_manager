@@ -44,7 +44,7 @@ class UserRegistrationForm(UserCreationForm):
         widget=forms.PasswordInput(attrs=attrs)
         )
 
-    class Meta (UserCreationForm.Meta):
+    class Meta (UserCreationForm.Meta): # type: ignore
         fields = ('first_name', 'last_name', 'username', 'email')
 
 class ProfileForm(UserChangeForm):

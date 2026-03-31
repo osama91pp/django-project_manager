@@ -13,10 +13,10 @@ class RegestrationView(CreateView):
     # success_url = reverse_lazy('login')
 
     def get_success_url(self):
-        login (self.request, self.object)
+        login (self.request, self.object) # type: ignore
         return reverse_lazy ('project_list')
 
-@login_required
+@login_required # type: ignore
 def edit_profile(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=request.user)
