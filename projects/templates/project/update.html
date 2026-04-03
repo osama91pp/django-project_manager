@@ -1,30 +1,55 @@
 {% extends "base.html" %}
 {% load i18n %}
+
 {% block content %}
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card">
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- Project Card -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm h-100">
+
+                <!-- Header -->
                 <div class="card-header">
-                    <h3 class="card-title">{{ object.name }}</h3>
+                    <h5 class="text-capitalize mb-1">
+                        {{ object.user.first_name }}'s Project
+                    </h5>
+                    <h3 class="card-title mb-0">
+                        {{ object.name }}
+                    </h3>
                 </div>
+
+                <!-- Body -->
                 <div class="card-body">
                     <form method="post">
                         {% csrf_token %}
+
                         {% include "common/form.html" with form=form %}
-                        <button type="submit" class="btn btn-success">
-                            <i class="bi bi-save"></i> {% trans "Save" %}
-                        </button>
-                        <a href="{% url 'project_delete' object.id %}" class="btn btn-danger ms-2">
-                            <i class="bi bi-trash"></i> {% trans "Delete" %}
-                        </a>
+
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-save"></i> {% trans "Save" %}
+                            </button>
+                            <a href="{% url 'project_delete' object.id %}"
+                               class="btn btn-danger">
+                                <i class="bi bi-trash"></i> {% trans "Delete" %}
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
-            {% include "project/task.html" with project=object %}
+
+        <!-- Tasks Section -->
+        <div class="col-lg-8">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    {% include "project/task.html" with project=object %}
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
 {% endblock content %}

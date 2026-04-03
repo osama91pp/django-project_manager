@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-03 22:07+0300\n"
+"PO-Revision-Date: 2026-04-03 18:00+0300\n"
+"Last-Translator: Osama Abdulraheem <osamarahem@gmail.com>\n"
+"Language-Team: Arabic <ar@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\projects\forms.py:10
+msgid "Description"
+msgstr "الوصف"
+
+#: .\projects\forms.py:10 .\projects\forms.py:22
+msgid "Title"
+msgstr "العنوان"
+
+#: .\projects\forms.py:10 .\projects\forms.py:22
+msgid "Category"
+msgstr "التصنيف"
+
+#: .\projects\forms.py:22
+msgid "Status"
+msgstr "الحالة"
+
+#: .\projects\models.py:13
+msgid "Pending"
+msgstr "قيد التنفيذ"
+
+#: .\projects\models.py:14
+msgid "Completed"
+msgstr "مكتمل"
+
+#: .\projects\models.py:15
+msgid "Postponed"
+msgstr "معلق"
+
+#: .\projects\models.py:16
+msgid "Canceled"
+msgstr "ملغى"
+
+#: .\projects\templates\partial\footer.html:6
+msgid "© 2026 All rights reserved"
+msgstr "جميع الحقوق محفوظة © 2026"
+
+#: .\projects\templates\partial\header.html:4
+msgid "Project Management"
+msgstr "ادارة المشاريع"
+
+#: .\projects\templates\partial\header.html:11
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\projects\templates\partial\header.html:21
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: .\projects\templates\partial\header.html:27
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: .\projects\templates\partial\header.html:36
+msgid "Search"
+msgstr "بحث"
+
+#: .\projects\templates\partial\header.html:44
+msgid "Log In"
+msgstr "تسجيل الدخول"
+
+#: .\projects\templates\partial\header.html:45
+msgid "Register"
+msgstr "حساب جديد"
+
+#: .\projects\templates\project\create.html:9
+#: .\projects\templates\project\list.html:9
+msgid "New Project"
+msgstr "مشروع جديد"
+
+#: .\projects\templates\project\create.html:15
+msgid "Create"
+msgstr "انشاء"
+
+#: .\projects\templates\project\delete.html:4
+msgid "Alert"
+msgstr "تنبيه"
+
+#: .\projects\templates\project\delete.html:5
+msgid "Are you sure you want to delete"
+msgstr "هل أنت متأكد من رغبتك في حذف"
+
+#: .\projects\templates\project\delete.html:8
+#: .\projects\templates\project\list.html:43
+#: .\projects\templates\project\update.html:36
+msgid "Delete"
+msgstr "حذف"
+
+#: .\projects\templates\project\list.html:6
+msgid "My Projects"
+msgstr "مشاريعي"
+
+#: .\projects\templates\project\list.html:38
+msgid "Edit"
+msgstr "تعديل"
+
+#: .\projects\templates\project\list.html:52
+msgid "There is no project to show"
+msgstr "لايوجد مشروع لعرضه"
+
+#: .\projects\templates\project\list.html:63
+#: .\projects\templates\project\list.html:69
+#: .\projects\templates\project\list.html:98
+#: .\projects\templates\project\list.html:104
+msgid "Previous"
+msgstr "السابق"
+
+#: .\projects\templates\project\list.html:76
+#: .\projects\templates\project\list.html:82
+#: .\projects\templates\project\list.html:111
+#: .\projects\templates\project\list.html:117
+msgid "Next"
+msgstr "التالي"
+
+#: .\projects\templates\project\task.html:32
+msgid "New Task"
+msgstr "مهمة جديدة"
+
+#: .\projects\templates\project\task.html:34
+msgid "Add"
+msgstr "إضافة"
+
+#: .\projects\templates\project\update.html:32
+msgid "Save"
+msgstr "حفظ التغييرات"
