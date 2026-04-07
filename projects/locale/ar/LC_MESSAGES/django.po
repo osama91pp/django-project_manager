@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-04 18:04+0300\n"
+"POT-Creation-Date: 2026-04-05 09:00+0300\n"
 "PO-Revision-Date: 2026-04-03 18:00+0300\n"
 "Last-Translator: Osama Abdulraheem <osamarahem@gmail.com>\n"
 "Language-Team: Arabic <ar@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\projects\admin.py:10 .\projects\admin.py:11 .\projects\admin.py:12
+#: .\projects\admin.py:10 .\projects\admin.py:11
 msgid "Projects Management"
 msgstr "ادارة المشاريع"
 
@@ -30,7 +30,8 @@ msgstr "الوصف"
 msgid "Title"
 msgstr "العنوان"
 
-#: .\projects\forms.py:10 .\projects\forms.py:22
+#: .\projects\forms.py:10 .\projects\forms.py:22 .\projects\models.py:13
+#: .\projects\models.py:14
 msgid "Category"
 msgstr "التصنيف"
 
@@ -38,21 +39,37 @@ msgstr "التصنيف"
 msgid "Status"
 msgstr "الحالة"
 
-#: .\projects\models.py:13
+#: .\projects\models.py:17
 msgid "Pending"
 msgstr "قيد التنفيذ"
 
-#: .\projects\models.py:14
+#: .\projects\models.py:18
 msgid "Completed"
 msgstr "مكتمل"
 
-#: .\projects\models.py:15
+#: .\projects\models.py:19
 msgid "Postponed"
 msgstr "معلق"
 
-#: .\projects\models.py:16
+#: .\projects\models.py:20
 msgid "Canceled"
 msgstr "ملغى"
+
+#: .\projects\models.py:39 .\projects\models.py:40
+msgid "Project"
+msgstr "مشروع"
+
+#: .\projects\models.py:39 .\projects\models.py:40
+msgid "Projects"
+msgstr "مشاريع"
+
+#: .\projects\models.py:51 .\projects\models.py:52
+msgid "Task"
+msgstr "مهمة"
+
+#: .\projects\models.py:51 .\projects\models.py:52
+msgid "Tasks"
+msgstr "مهام"
 
 #: .\projects\templates\partial\footer.html:6
 msgid "© 2026 All rights reserved"
@@ -105,7 +122,7 @@ msgstr "هل أنت متأكد من رغبتك في حذف"
 
 #: .\projects\templates\project\delete.html:8
 #: .\projects\templates\project\list.html:43
-#: .\projects\templates\project\update.html:36
+#: .\projects\templates\project\update.html:37
 msgid "Delete"
 msgstr "حذف"
 
@@ -143,6 +160,6 @@ msgstr "مهمة جديدة"
 msgid "Add"
 msgstr "إضافة"
 
-#: .\projects\templates\project\update.html:32
+#: .\projects\templates\project\update.html:33
 msgid "Save"
 msgstr "حفظ التغييرات"

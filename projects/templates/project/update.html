@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load humanize %}
 
 {% block content %}
 <div class="container py-5">
@@ -12,11 +13,11 @@
                 <!-- Header -->
                 <div class="card-header">
                     <h5 class="text-capitalize mb-1">
-                        {{ object.user.first_name }}'s Project
+                        {{ object.title}}
                     </h5>
-                    <h3 class="card-title mb-0">
-                        {{ object.name }}
-                    </h3>
+                    <small class="text-muted">
+                        {{ object.created_at|naturaltime }}
+                    </small>
                 </div>
 
                 <!-- Body -->
